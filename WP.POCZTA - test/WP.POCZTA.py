@@ -77,7 +77,6 @@ time.sleep(3)
 waste_folder = driver.find_element_by_id("folder-3")
 waste_folder.click()
 
-
 try:
     actual2 = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.CLASS_NAME, "empty-state__title"))
