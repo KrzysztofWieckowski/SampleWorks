@@ -15,8 +15,8 @@ class Nowa_lista(object):
         if x > y:
             ile_elementow_odjac = x - y
             ile_elementów_zostaje = x - ile_elementow_odjac
-            nowa_l = self.stara_lista[0:ile_elementów_zostaje]
-            print(nowa_l)
+            nowa_lista = self.stara_lista[:ile_elementów_zostaje]
+            print(nowa_lista)
         if x == y:
             print(self.stara_lista)
         if x < y:
@@ -30,6 +30,6 @@ class Nowa_lista(object):
             print(self.stara_lista)
 
 # MAIN
-nowa_lista = Nowa_lista(["k", "l", "m", "n"], 8)
+nowa_lista = Nowa_lista(["k", "l", "m", "n"], 4)
 wynik = nowa_lista.tworzenie_nowej_listy()
 input("\n\nAby zakończyć program, naciśnij klawisz Enter.")
