@@ -30,6 +30,6 @@ class Nowa_lista(object):
             print(self.stara_lista)
 
 # MAIN
-nowa_lista = Nowa_lista(["k", "l", "m", "n"], 4)
+nowa_lista = Nowa_lista(["k", "l", "m", "n"], 8)
 wynik = nowa_lista.tworzenie_nowej_listy()
 input("\n\nAby zakończyć program, naciśnij klawisz Enter.")
