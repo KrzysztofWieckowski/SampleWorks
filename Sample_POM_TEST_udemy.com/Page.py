@@ -1,5 +1,5 @@
-from locator import *
-from element import BasePageElement
+from Locators import *
+from Elements import BasePageElement
 
 class SearchTextElement(BasePageElement):
     """This class gets the search text from the specified locator"""
