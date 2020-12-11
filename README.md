@@ -1,5 +1,5 @@
-# Learning software testing with Python and Selenium.
-**I put my sample works and exercises here.**
+# Learning testing with Python and Selenium.
+**My sample works and exercises.**
 
 ---
 
