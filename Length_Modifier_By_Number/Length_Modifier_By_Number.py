@@ -46,6 +46,6 @@ class NewList(object):
 
 #MAIN
 old_list = ["k", "l", "m", "n"]
-number = 10
+number = 8
 new_list = NewList(old_list, number)
 resoult = new_list.creating_new_list()
