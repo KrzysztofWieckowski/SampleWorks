@@ -1,6 +1,6 @@
 # test_mailservice_wp.pl
-# Removes spam and empties the trash in wp.pl mailservice.
-# (this test requires an active account in the mailservice)
+# Removes spam and empties the trash in wp.pl email service.
+# (this test requires an active account in the email service)
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
