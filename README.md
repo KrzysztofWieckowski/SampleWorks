@@ -5,7 +5,7 @@
 
 ## Contents.
 **Sample_POM_TEST_udemy.com**
-- A Page Object Model which performs sample end-to-end test on udemy.com
+- A Page Object Model which performs sample end-to-end test on udemy.com.
 
 **Sample_TEST_emailservice_wp.pl**
 - Removes Spam and empties the Trash in wp.pl email service.
