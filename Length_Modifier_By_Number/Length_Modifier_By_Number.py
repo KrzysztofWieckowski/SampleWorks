@@ -44,8 +44,9 @@ class NewList(object):
                         self.old_list.append(z)
                 print("New List: ", self.old_list)
 
-#MAIN
+
+# MAIN
 old_list = ["k", "l", "m", "n"]
 number = 8
 new_list = NewList(old_list, number)
-resoult = new_list.creating_new_list()
+result = new_list.creating_new_list()
