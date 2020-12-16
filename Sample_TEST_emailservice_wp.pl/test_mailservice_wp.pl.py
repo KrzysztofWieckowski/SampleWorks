@@ -18,12 +18,12 @@ driver.maximize_window()
 textbox1 = driver.find_element_by_id("login")
 textbox1.clear()
 # Below, between quotation marks, please put your login.
-textbox1.send_keys("krzyszwiec")
+textbox1.send_keys("_____")
 
 textbox2 = driver.find_element_by_id("password")
 textbox2.clear()
 # Below, between quotation marks, please put your password.
-textbox2.send_keys("gedwolvged")
+textbox2.send_keys("_____")
 
 submit_Button = driver.find_element_by_class_name("notificationWrapper")
 submit_Button.click()
