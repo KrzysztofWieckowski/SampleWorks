@@ -8,6 +8,7 @@ You can easily set up a new test changing:
 - amount of actions
 - data provided
 - expected results.
+
 Hovever please remember about the search logic in the UI of the website
 
 ## Requirements:
