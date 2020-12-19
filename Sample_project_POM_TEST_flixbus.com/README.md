@@ -11,7 +11,7 @@ You can easily set up a new test changing:
 - data provided
 - expected results
 
-Hovever please remember about the search logic in the UI of the website
+However please remember about the search logic in the UI of the website
 
 ## Requirements:
 •	Python 3.8.
