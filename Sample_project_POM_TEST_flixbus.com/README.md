@@ -16,8 +16,11 @@ This is my demo project which shows how Page Object Model can be implemented to 
 
 ## Installing:
 •	Python installation package can be download from here - remember to choose option "Add to PATH" during installation.
+
 •	Instructions for Selenium and Webdriver configuration are here - I recommend adding Selenium and Webdriver files to Python installation folder, otherwise PATH variable has to be set also for them.
+
 •	html-testRunner can be installed by simple command in cmd: pip install html-testRunner.
+
 •	PyCharm is available here.
 
 ## Running:
