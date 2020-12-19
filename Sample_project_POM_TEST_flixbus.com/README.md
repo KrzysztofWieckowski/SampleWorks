@@ -9,7 +9,7 @@ You can easily set up a new test changing:
 - sequence of actions
 - amount of actions
 - data provided
-- expected results.
+- expected results
 
 Hovever please remember about the search logic in the UI of the website
 
