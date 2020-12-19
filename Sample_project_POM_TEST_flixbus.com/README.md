@@ -34,9 +34,9 @@ However please remember about the search logic in the UI of the website.
 •	PyCharm is available here.
 
 ## Running:
-I've uploaded  whole project with its internal structure. You can simply put it into your PyCharm's PycharmProjects folder or wherever you want.
+I've uploaded  whole project with it's internal structure. You can simply put it into your PyCharm's PycharmProjects folder or wherever you want.
 Steps to run:
-PyCharm
+
 1.	Open Pycharm and the project python files.
 2.	Right-click on file main.py.
 3.	Click on "Run ‘main’" or "Debug ’main’".
