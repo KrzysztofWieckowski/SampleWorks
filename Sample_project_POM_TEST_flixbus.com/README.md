@@ -11,7 +11,7 @@ You can easily set up a new test changing:
 - data provided
 - expected results
 
-However please remember about the search logic in the UI of the website
+However please remember about the search logic in the UI of the website.
 
 ## Requirements:
 •	Python 3.8.
@@ -29,7 +29,7 @@ However please remember about the search logic in the UI of the website
 
 •	Instructions for Selenium and Webdriver configuration are here - I recommend adding Selenium and Webdriver files to Python installation folder, otherwise PATH variable has to be set also for them.
 
-•	html-testRunner can be installed by simple command in cmd: pip install html-testRunner.
+•	html-testRunner can be installed by simple command in cmd: <pip install html-testRunner>.
 
 •	PyCharm is available here.
 
