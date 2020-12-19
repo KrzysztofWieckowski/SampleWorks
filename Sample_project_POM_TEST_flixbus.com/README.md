@@ -1,6 +1,7 @@
 # Sample POM Project with Selenium and Python.
 
 Sample Page Object Model test (with www.flixbus.com. as an example).
+
 This is my demo project which delivers Page Object Model for creating a framework for website test automation.
 
 You can easily set up a new test changing:
