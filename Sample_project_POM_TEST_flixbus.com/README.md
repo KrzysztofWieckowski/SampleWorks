@@ -25,13 +25,13 @@ However please remember about the search logic in the UI of the website.
 •	JetBrains PyCharm Community Edition 2020.2.3.
 
 ## Installing:
-•	Python installation package can be download from here - remember to choose option "Add to PATH" during installation.
+•	Python installation package can be download from [here](https://www.python.org/downloads/) - remember to choose option "Add to PATH" during installation.
 
-•	Instructions for Selenium and Webdriver configuration are [here](https://www.python.org/downloads/) - I recommend adding Selenium and Webdriver files to Python installation folder, otherwise PATH variable has to be set also for them.
+•	Instructions for Selenium and Webdriver configuration are [here](https://selenium-python.readthedocs.io/installation.html#downloading-python-bindings-for-selenium) - I recommend adding Selenium and Webdriver files to Python installation folder, otherwise PATH variable has to be set also for them.
 
 •	html-testRunner can be installed by simple command in cmd: 'pip install html-testRunner'.
 
-•	PyCharm is available here.
+•	PyCharm is available [here](https://www.jetbrains.com/pycharm/download/#section=windows).
 
 ## Running:
 I've uploaded  whole project with it's internal structure. You can simply put it into your PyCharm's PycharmProjects folder or wherever you want.
