@@ -29,7 +29,7 @@ However please remember about the search logic in the UI of the website.
 
 •	Instructions for Selenium and Webdriver configuration are [here](https://selenium-python.readthedocs.io/installation.html#downloading-python-bindings-for-selenium) - I recommend adding Selenium and Webdriver files to Python installation folder, otherwise PATH variable has to be set also for them.
 
-•	html-testRunner can be installed by simple command in cmd: '''pip install html-testRunner'''.
+•	html-testRunner can be installed by simple command in cmd: ```pip install html-testRunner```.
 
 •	PyCharm is available [here](https://www.jetbrains.com/pycharm/download/#section=windows).
 
@@ -39,7 +39,7 @@ Steps to run:
 
 1.	Open Pycharm and the project python files.
 2.	Right-click on file main.py.
-3.	Click on "Run ‘main’" or "Debug ’main’".
+3.	Click on ```Run ‘main’``` or ```Debug ’main’```.
 4.	When the process is finished, open 'Reports' folder created on your computer (where the project is placed) and find an appropriate report. You can easily open the report (html document) using your web browser.
 
 Example of report:
