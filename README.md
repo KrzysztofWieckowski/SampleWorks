@@ -28,7 +28,7 @@
 ## Technologies.
 Python 3.8.
 
-Selenium Webdriver (version 3.141.0).
+Selenium Webdriver version 3.141.0.
 
 JetBrains PyCharm Community Edition 2020.2.3.
 
