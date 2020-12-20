@@ -40,7 +40,7 @@ Steps to run:
 1.	Open Pycharm and the project python files.
 2.	Right-click on file main.py.
 3.	Click on "Run ‘main’" or "Debug ’main’".
-4.	When the process is finished, open Reports folder created on your computer (where the project is placed) and find an appropriate report. You can easily open this report (html document) using your web browser.
+4.	When the process is finished, open 'Reports' folder created on your computer (where the project is placed) and find an appropriate report. You can easily open this report (html document) using your web browser.
 
 Example of report:
 [TEST RESULT.pdf](https://github.com/KrzysztofWieckowski/SampleWorks/files/5720160/TEST.RESULT.pdf)
