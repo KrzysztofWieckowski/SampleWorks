@@ -10,7 +10,7 @@
 - This demo project delivers a framework for website test automation. It's a Sample Page Object Model test (with www.flixbus.com. as an example). 
   
 **Sample_POM_TEST_udemy.com**
-- A Page Object Model which performs sample end-to-end test on udemy.com.
+- A Page Object Model which performs sample end-to-end test on www.udemy.com.
 
 **Sample_TEST_emailservice_wp.pl**
 - Removes Spam and empties Trash in wp.pl email service.
