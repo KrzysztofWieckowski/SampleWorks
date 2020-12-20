@@ -11,6 +11,8 @@ You can easy create a new test changing:
 
 However please remember about the search logic in the UI of the website.
 
+---
+
 ## Requirements:
 •	Python 3.8.
 
