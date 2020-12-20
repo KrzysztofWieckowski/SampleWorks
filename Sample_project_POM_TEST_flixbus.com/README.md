@@ -43,4 +43,5 @@ Steps to run:
 4.	When the process is finished, open 'Reports' folder created on your computer (where the project is placed) and find an appropriate report. You can easily open the report (html document) using your web browser.
 
 Example of report:
+
 ![Test PrtScr](https://user-images.githubusercontent.com/74428939/102710336-dd0a0c80-42b1-11eb-8c86-c4414ed11338.png)
