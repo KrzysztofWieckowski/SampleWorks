@@ -5,9 +5,11 @@ from locators import Locators
 
 
 class ResultPage:
+    """All result page methods come here."""
     def __init__(self, driver):
         self.driver = driver
 
+        # Variables for locators.
         self.search_departure_assertion_xpath = Locators.search_departure_assertion_xpath
         self.search_arrival_assertion_xpath = Locators.search_arrival_assertion_xpath
         self.search_date1_assertion_xpath = Locators.search_date1_assertion_xpath

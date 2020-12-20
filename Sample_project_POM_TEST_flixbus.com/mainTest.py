@@ -1,3 +1,8 @@
+# Sample_project_POM_TEST_flixbus.com
+# This demo project delivers a framework for website test automation.
+# It's a Sample Page Object Model test with www.flixbus.com. as an example.
+
+
 from selenium import webdriver
 import unittest
 from searchPage import SearchPage
@@ -7,6 +12,7 @@ import HtmlTestRunner
 
 
 class FlixbusTest(unittest.TestCase):
+    """A test class to check how selected page elements works"""
 
     @classmethod
     def setUpClass(cls):
@@ -18,11 +24,13 @@ class FlixbusTest(unittest.TestCase):
         cls.driver.find_element_by_id("cookie-consent-accept-all-button").click()
 
     def test_01_check_page_loading(self):
+        """Test_01 Checks page loading by the page title."""
         driver = self.driver
         expected_title = "Bus travel through Europe | FlixBus"
         self.assertEqual(driver.title, expected_title, "Wrong page title")
 
     def test_02_check_page_elements_availability(self):
+        """Test_02 Checks page elements availability before starting the proper tests."""
         driver = self.driver
         check = SearchPage(driver)
 
@@ -52,9 +60,11 @@ class FlixbusTest(unittest.TestCase):
             self.assertTrue(check.check_search_button())
 
     def test_03_sample_search_test(self):
+        """Test_03 Runs and checks a sample test case."""
         driver = self.driver
         search = SearchPage(driver)
 
+        # Performing user steps:
         search.select_two_ways_flight()
         search.insert_departure("Warsaw")
         search.insert_arrival("Berlin")
@@ -64,6 +74,7 @@ class FlixbusTest(unittest.TestCase):
         search.set_children_amount()
         search.search_button()
 
+        # Checking results:
         result = ResultPage(driver)
         with self.subTest("Checking if main message is equal to expected"):
             self.assertTrue(result.result_assertion_by_text("No trips on: Thu, 5 May"))
@@ -83,6 +94,7 @@ class FlixbusTest(unittest.TestCase):
         driver.get("https://www.flixbus.com/")
         search = SearchPage(driver)
 
+        # Performing user steps:
         search.select_two_ways_flight()
         search.insert_departure("Warsaw")
         search.insert_arrival("Berlin")
@@ -92,6 +104,7 @@ class FlixbusTest(unittest.TestCase):
         search.set_children_amount()
         search.search_button()
 
+        # Checking results:
         result = ResultPage(driver)
         with self.subTest("Checking if main result page message is equal to expected"):
             # Expected message ("Outbound trip") is intentionally wrong and causes one subtest to fail.
@@ -106,7 +119,6 @@ class FlixbusTest(unittest.TestCase):
             self.assertTrue(result.date2_assertion("Fri 6 May"))
         with self.subTest("Checking if adults, children, bikes amount is equal to expected"):
             self.assertTrue(result.passengers_assertion("2 Adults, 1 Child, 0 Bike Slots"))
-
 
     @classmethod
     def tearDownClass(cls):

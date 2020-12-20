@@ -3,10 +3,12 @@ import time
 
 
 class SearchPage:
+    """All search page methods come here."""
 
     def __init__(self, driver):
         self.driver = driver
 
+        # Variables for locators
         self.select_one_way_flight_xpath = Locators.select_one_way_flight_xpath
         self.select_two_ways_flight_xpath = Locators.select_two_ways_flight_xpath
         self.insert_departure_xpath = Locators.insert_departure_xpath

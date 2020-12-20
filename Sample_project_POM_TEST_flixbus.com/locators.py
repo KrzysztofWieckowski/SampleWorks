@@ -1,4 +1,5 @@
 class Locators:
+    """A class for locators. All search page and result page locators should come here."""
 
     # searchPage objects LOCATORS:
 

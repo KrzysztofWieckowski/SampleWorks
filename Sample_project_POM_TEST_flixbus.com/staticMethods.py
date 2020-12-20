@@ -14,7 +14,7 @@ class StaticMethods:
             os.makedirs(folder)
         return folder
 
-    # Method for getting current date.
+    # Method for getting current date
     @staticmethod
     def get_date():
         d_format = '%Y%m%d'
