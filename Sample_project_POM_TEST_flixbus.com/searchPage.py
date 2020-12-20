@@ -84,6 +84,10 @@ class SearchPage:
     """Methods for checking 
     search page elements availability."""
 
+    def check_one_way_flight_button(self):
+        self.driver.find_element_by_xpath(self.select_two_ways_flight_xpath).click()
+        return self.driver.find_element_by_xpath(self.select_one_way_flight_xpath).is_enabled()
+
     def check_two_ways_flight_button(self):
         self.driver.find_element_by_xpath(self.select_two_ways_flight_xpath).click()
         return self.driver.find_element_by_xpath(self.select_two_ways_flight_xpath).is_enabled()

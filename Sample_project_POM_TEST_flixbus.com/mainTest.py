@@ -2,7 +2,6 @@
 # This demo project delivers a framework for website test automation.
 # It's a Sample Page Object Model test with www.flixbus.com. as an example.
 
-
 from selenium import webdriver
 import unittest
 from searchPage import SearchPage
@@ -34,6 +33,8 @@ class FlixbusTest(unittest.TestCase):
         driver = self.driver
         check = SearchPage(driver)
 
+        with self.subTest("Checking one way flight button"):
+            self.assertTrue(check.check_one_way_flight_button())
         with self.subTest("Checking two ways flight button"):
             self.assertTrue(check.check_two_ways_flight_button())
         with self.subTest("Checking departure searchbox"):
@@ -42,19 +43,19 @@ class FlixbusTest(unittest.TestCase):
             self.assertTrue(check.check_arrival_searchbox())
         with self.subTest("Checking replace_button"):
             self.assertTrue(check.check_replace_button())
-        with self.subTest("Checking insert date1 searchbox"):
+        with self.subTest("Checking insert date1 picker"):
             self.assertTrue(check.check_insert_date1_searchbox())
-        with self.subTest("Checking insert date2 searchbox"):
+        with self.subTest("Checking insert date2 picker"):
             self.assertTrue(check.check_insert_date2_searchbox())
         with self.subTest("Checking month and year heading"):
             self.assertTrue(check.check_month_and_year_heading())
         with self.subTest("Checking passengers searchbox"):
             self.assertTrue(check.check_passengers_searchbox())
-        with self.subTest("Checking adults button"):
+        with self.subTest("Checking add adults button"):
             self.assertTrue(check.check_adults_button())
-        with self.subTest("Checking children button"):
+        with self.subTest("Checking add children button"):
             self.assertTrue(check.check_children_button())
-        with self.subTest("Checking bikes button"):
+        with self.subTest("Checking add bikes button"):
             self.assertTrue(check.check_children_button())
         with self.subTest("Checking search button"):
             self.assertTrue(check.check_search_button())
@@ -89,19 +90,18 @@ class FlixbusTest(unittest.TestCase):
         with self.subTest("Checking if adults, children, bikes amount is equal to expected"):
             self.assertTrue(result.passengers_assertion("2 Adults, 1 Child, 0 Bike Slots"))
 
-    def test_04_sample_search_test_fail(self):
+    def test_04_sample_search_test_with_fail(self):
+        """Test_03 Runs and checks a sample test case with one subtest intentionally failed."""
         driver = self.driver
         driver.get("https://www.flixbus.com/")
         search = SearchPage(driver)
 
         # Performing user steps:
         search.select_two_ways_flight()
-        search.insert_departure("Warsaw")
+        search.insert_departure("Munich")
         search.insert_arrival("Berlin")
-        search.replace_destinations()
         search.insert_dates("May 2022")
-        search.set_adults_amount()
-        search.set_children_amount()
+        search.set_bikes_amount()
         search.search_button()
 
         # Checking results:
@@ -110,15 +110,15 @@ class FlixbusTest(unittest.TestCase):
             # Expected message ("Outbound trip") is intentionally wrong and causes one subtest to fail.
             self.assertTrue(result.result_assertion_by_text("Outbound trip"))
         with self.subTest("Checking if departure place is equal to expected"):
-            self.assertTrue(result.departure_assertion("Berlin"))
+            self.assertTrue(result.departure_assertion("Munich"))
         with self.subTest("Checking if arrival place is equal to expected"):
-            self.assertTrue(result.arrival_assertion("Warsaw"))
+            self.assertTrue(result.arrival_assertion("Berlin"))
         with self.subTest("Checking if departure date is equal to expected"):
             self.assertTrue(result.date1_assertion("Thu 5 May"))
         with self.subTest("Checking if arrival date is equal to expected"):
             self.assertTrue(result.date2_assertion("Fri 6 May"))
         with self.subTest("Checking if adults, children, bikes amount is equal to expected"):
-            self.assertTrue(result.passengers_assertion("2 Adults, 1 Child, 0 Bike Slots"))
+            self.assertTrue(result.passengers_assertion("1 Adult, 1 Bike Slot"))
 
     @classmethod
     def tearDownClass(cls):
