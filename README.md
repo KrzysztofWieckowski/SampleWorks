@@ -3,7 +3,7 @@
 
 ---
 
-## Contents.
+## Contents:
 
 **Sample_project_POM_TEST_flixbus.com**
 
@@ -25,7 +25,7 @@
 
 ---
 
-## Technologies.
+## Technologies:
 Python 3.8.
 
 Selenium Webdriver version 3.141.0.
