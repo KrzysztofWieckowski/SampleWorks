@@ -20,7 +20,7 @@ class ResultPage:
     """Methods for checking 
         expected results."""
 
-    def result_assertion_by_text(self, assertion):
+    def assertion_by_text(self, assertion):
         WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.XPATH, self.search_result_assertion_xpath))
         )
@@ -58,4 +58,3 @@ class ResultPage:
         result_text = self.driver.find_element_by_xpath(self.search_passengers_assertion_xpath).get_attribute("value")
         if expected_result_text == result_text:
             return True
-
