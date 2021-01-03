@@ -3,8 +3,8 @@ import os
 
 
 class StaticMethods:
+    """Method that creates folder with current date for reports and returns path to it."""
 
-    """Method which creates folder with current date for reports and returns path to it."""
     @staticmethod
     def reports_folder():
         date = StaticMethods.get_date()
@@ -14,7 +14,7 @@ class StaticMethods:
             os.makedirs(folder)
         return folder
 
-    """Method for getting current date."""
+    """Method which gets current date."""
     @staticmethod
     def get_date():
         date_format = '%Y%m%d'

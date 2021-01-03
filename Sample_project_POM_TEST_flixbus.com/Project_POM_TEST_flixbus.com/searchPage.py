@@ -49,7 +49,6 @@ class SearchPage:
         self.driver.find_element_by_xpath(self.replace_destinations_xpath).click()
 
     def insert_dates(self, new_date):
-
         self.driver.find_element_by_css_selector(self.insert_date1_css).click()
         month_and_year_heading = self.driver.find_element_by_css_selector(self.month_and_year_heading_css).text
         while month_and_year_heading != new_date:
