@@ -1,8 +1,6 @@
 class Locators:
     """A class for locators. All search page and result page locators should come here."""
 
-    # searchPage objects LOCATORS:
-
     select_one_way_flight_css = "[for='search-mask-trip-mode-oneway-toggle']"
     select_two_ways_flight_css = "[for='search-mask-trip-mode-roundtrip-toggle']"
     insert_departure_xpath = "//*[@id='search-mask-component']/div/div/div[2]/div[1]/div/div/div/div/input"
@@ -10,27 +8,13 @@ class Locators:
     insert_arrival_xpath = "//*[@id='search-mask-component']/div/div/div[2]/div[2]/div/div/div/input"
     insert_arrival_list_first_css = ".Option__additionalInfo___2Qt_f"
     replace_destinations_xpath = "//*[@id='search-mask-component']/div/div/div[2]/div[1]/div/button"
-    insert_date1_xpath = "//*[@data-e2e='departure-date-input-field']"
-    insert_date2_xpath = "//*[@data-e2e='arrival-date-input-field']"
-    next_month_button_xpath = "//*[@class='DayPicker-NavButton DayPicker-NavButton--custom DayPicker-NavButton--next']"
-    month_and_year_heading_xpath = \
-        "//*[@id='search-mask-component']/div/div/div[3]/div[3]/div/div[2]/div/div/div/div[2]/div[1]/div[1]/div"
-    new_date1_xpath = "//*[@aria-label='Thursday, 5 May 2022']"  # locator for date: Thu 5 May 2022
-    new_date2_xpath = "//*[@aria-label='Friday, 6 May 2022']"  # locator for date: Thu 6 May 2022
-    insert_passengers = "//*[@placeholder='Please add passengers...']"
-    add_adult_xpath = "//*[@class='Icon__icon___1nNH- Icon__iconSmall___1BFyd flix-icon flix-icon-plus']"
-    add_child_xpath = \
-        "//*[@id='search-mask-component']/div/div/div[4]/div/div[2]/div/div[2]/div/div[2]/div[2]/div[2]/button[2]/i"
-    add_bike_xpath = \
-        "//*[@id='search-mask-component']/div/div/div[4]/div/div[2]/div/div[2]/div/div[2]/div[3]/div[2]/button[2]/i"
-    search_button_xpath = "//*[@data-e2e='search-button']"
-
-    # resultPage objects LOCATORS:
-
-    search_departure_assertion_xpath = "//*[@id='search-mask-component']/div/div/div[2]/div[1]/div/div/div/div/input"
-    search_arrival_assertion_xpath = "//*[@id='search-mask-component']/div/div/div[2]/div[2]/div/div/div/input"
-    search_date1_assertion_xpath = "//*[@id='search-mask-component']/div/div/div[3]/div[1]/div/div/input"
-    search_date2_assertion_xpath = "//*[@id='search-mask-component']/div/div/div[3]/div[2]/div/div/input"
-    search_passengers_xpath = "//*[@id='search-mask-component']/div/div/div[4]/div/div/div[1]/div/input"
-    search_result_assertion_xpath = "//*[@class='flix-h2 Message__messageTitle___36oyY']"
-
+    insert_date1_css = "[data-e2e='departure-date-input-field']"
+    insert_date2_css = "[data-e2e='arrival-date-input-field']"
+    next_month_button_css = ".flix-icon-arrow-right"
+    month_and_year_heading_css = ".DayPicker-Month:nth-child(1) > .DayPicker-Caption > div"
+    insert_passengers_css = "[placeholder='Please add passengers...']"
+    add_adult_css = ".ProductStepper__productStepper___Oczbv:nth-child(1) .flix-icon-plus"
+    add_child_css = ".ProductStepper__productStepper___Oczbv:nth-child(2) .flix-icon-plus"
+    add_bike_css = ".ProductStepper__productStepper___Oczbv:nth-child(3) .flix-icon-plus"
+    search_button_css = "[data-e2e='search-button']"
+    search_result_assertion_css = "[class='flix-h2 Message__messageTitle___36oyY']"

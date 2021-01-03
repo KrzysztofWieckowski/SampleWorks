@@ -4,11 +4,11 @@
 
 from selenium import webdriver
 import unittest
+import HtmlTestRunner
 from searchPage import SearchPage
 from resultPage import ResultPage
 from staticMethods import StaticMethods
 from dictionaries import Dictionaries
-import HtmlTestRunner
 
 
 class FlixbusTest(unittest.TestCase):

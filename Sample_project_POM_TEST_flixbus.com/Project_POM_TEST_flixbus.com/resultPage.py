@@ -10,22 +10,22 @@ class ResultPage:
         self.driver = driver
 
         # Variables for locators.
-        self.search_departure_assertion_xpath = Locators.search_departure_assertion_xpath
-        self.search_arrival_assertion_xpath = Locators.search_arrival_assertion_xpath
-        self.search_date1_assertion_xpath = Locators.search_date1_assertion_xpath
-        self.search_date2_assertion_xpath = Locators.search_date2_assertion_xpath
-        self.search_passengers_assertion_xpath = Locators.search_passengers_xpath
-        self.search_result_assertion_xpath = Locators.search_result_assertion_xpath
+        self.search_departure_assertion_xpath = Locators.insert_departure_xpath
+        self.search_arrival_assertion_xpath = Locators.insert_arrival_xpath
+        self.search_date1_assertion_css = Locators.insert_date1_css
+        self.search_date2_assertion_css = Locators.insert_date2_css
+        self.search_passengers_assertion_css = Locators.insert_passengers_css
+        self.search_result_assertion_css = Locators.search_result_assertion_css
 
     """Methods for checking 
         expected results."""
 
     def assertion_by_text(self, assertion):
         WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located((By.XPATH, self.search_result_assertion_xpath))
+            EC.presence_of_element_located((By.CSS_SELECTOR, self.search_result_assertion_css))
         )
         expected_result_text = assertion
-        result_text = self.driver.find_element_by_xpath(self.search_result_assertion_xpath).text
+        result_text = self.driver.find_element_by_css_selector(self.search_result_assertion_css).text
         if expected_result_text == result_text:
             return True
 
@@ -43,18 +43,18 @@ class ResultPage:
 
     def date1_assertion(self, assertion):
         expected_result_text = assertion
-        result_text = self.driver.find_element_by_xpath(self.search_date1_assertion_xpath).get_attribute("value")
+        result_text = self.driver.find_element_by_css_selector(self.search_date1_assertion_css).get_attribute("value")
         if expected_result_text == result_text:
             return True
 
     def date2_assertion(self, assertion):
         expected_result_text = assertion
-        result_text = self.driver.find_element_by_xpath(self.search_date2_assertion_xpath).get_attribute("value")
+        result_text = self.driver.find_element_by_css_selector(self.search_date2_assertion_css).get_attribute("value")
         if expected_result_text == result_text:
             return True
 
     def passengers_assertion(self, assertion):
         expected_result_text = assertion
-        result_text = self.driver.find_element_by_xpath(self.search_passengers_assertion_xpath).get_attribute("value")
+        result_text = self.driver.find_element_by_css_selector(self.search_passengers_assertion_css).get_attribute("value")
         if expected_result_text == result_text:
             return True
