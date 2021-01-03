@@ -1,6 +1,5 @@
 from locators import Locators
 from dictionaries import Dictionaries
-import time
 
 
 class SearchPage:
@@ -9,13 +8,13 @@ class SearchPage:
     def __init__(self, driver):
         self.driver = driver
 
-        # Variables for locators
+        # Variables for locators:
         self.select_one_way_flight_css = Locators.select_one_way_flight_css
         self.select_two_ways_flight_css = Locators.select_two_ways_flight_css
         self.insert_departure_xpath = Locators.insert_departure_xpath
-        self.insert_departure_list_first_css = Locators.insert_departure_list_first_css
+        self.departure_list_first_css = Locators.departure_list_first_css
         self.insert_arrival_xpath = Locators.insert_arrival_xpath
-        self.insert_arrival_list_first_css = Locators.insert_arrival_list_first_css
+        self.arrival_list_first_css = Locators.arrival_list_first_css
         self.replace_destinations_xpath = Locators.replace_destinations_xpath
         self.insert_date1_css = Locators.insert_date1_css
         self.insert_date2_css = Locators.insert_date2_css
@@ -38,12 +37,11 @@ class SearchPage:
 
     def insert_departure(self, departure):
         self.driver.find_element_by_xpath(self.insert_departure_xpath).send_keys(departure)
-        self.driver.find_element_by_css_selector(self.insert_departure_list_first_css).click()
+        self.driver.find_element_by_css_selector(self.departure_list_first_css).click()
 
     def insert_arrival(self, arrival):
         self.driver.find_element_by_xpath(self.insert_arrival_xpath).send_keys(arrival)
-        time.sleep(1)
-        self.driver.find_element_by_css_selector(self.insert_arrival_list_first_css).click()
+        self.driver.find_element_by_css_selector(self.arrival_list_first_css).click()
 
     def replace_destinations(self):
         self.driver.find_element_by_xpath(self.replace_destinations_xpath).click()
@@ -55,14 +53,14 @@ class SearchPage:
             self.driver.find_element_by_css_selector(self.next_month_button_css).click()
             month_and_year_heading = self.driver.find_element_by_css_selector(self.month_and_year_heading_css).text
         else:
-            self.driver.find_element_by_css_selector(Dictionaries.test_3.get("locator for Thu 5 May")).click()
+            self.driver.find_element_by_css_selector(Dictionaries.test_03.get("locator for Thu 5 May")).click()
 
         self.driver.find_element_by_css_selector(self.insert_date2_css).click()
         while month_and_year_heading != new_date:
             self.driver.find_element_by_css_selector(self.next_month_button_css).click()
             month_and_year_heading = self.driver.find_element_by_css_selector(self.month_and_year_heading_css).text
         else:
-            self.driver.find_element_by_css_selector(Dictionaries.test_3.get("locator for Fri 6 May")).click()
+            self.driver.find_element_by_css_selector(Dictionaries.test_03.get("locator for Fri 6 May")).click()
 
     def set_adults_amount(self):
         self.driver.find_element_by_css_selector(self.insert_passengers_css).click()
