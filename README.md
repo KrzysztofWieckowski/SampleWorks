@@ -23,7 +23,7 @@
 - A Page Object Model which performs sample end-to-end test on www.udemy.com.
 
 **Sample_TEST_emailservice_wp.pl**
-- Removes Spam and empties Trash in wp.pl email service.
+- Removes Spam and empties Trash in www.wp.pl email service.
 
 **Length_Modifier_By_Number**
 - Length_Modifier_By_Number.
