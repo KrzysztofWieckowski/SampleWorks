@@ -10,9 +10,13 @@
 - This demo project delivers a framework for website test automation. It's a sample Page Object Model test (with www.flixbus.com. as an example).
 
 - You can easy create a new test changing:
+
 -sequence of actions,
+
 -amount of actions,
+
 -data provided,
+
 -expected results.
 
 **Sample_POM_TEST_udemy.com**
