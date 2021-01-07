@@ -47,7 +47,7 @@ Steps to run:
 
   -  select proper ```Python interpreter``` from the list and click ```OK```.
 
-    For more info please check [here](https://www.jetbrains.com/help/pycharm/run-debug-configuration-python.html#1).
+ For more info please check [here](https://www.jetbrains.com/help/pycharm/run-debug-configuration-python.html#1).
 
 3.	Right-click on file mainTest.py.
 4.	Click on ```Run 'mainTest'``` or ```Debug 'mainTest'```.
