@@ -4,7 +4,7 @@ This demo project delivers a framework for website test automation. It's a Sampl
 
 You can easy create a new test changing:
 - sequence of actions
-- amount of actions
+- number of actions
 - data provided
 - expected results
 
@@ -33,13 +33,26 @@ However please remember about the search logic in the UI of the website.
 •	PyCharm is available [here](https://www.jetbrains.com/pycharm/download/#section=windows).
 
 ## Running:
-I've uploaded  whole project with it's internal structure. You can simply put it into your PyCharm's PycharmProjects folder or wherever you want.
+I've uploaded  whole project with its internal structure. You can simply put it into your PyCharm's PycharmProjects folder or wherever you want.
 Steps to run:
 
 1.	Open Pycharm and the project python files.
-2.	Right-click on file mainTest.py.
-3.	Click on ```Run 'mainTest'``` or ```Debug 'mainTest'```.
-4.	When the process is finished, open 'Reports' folder created on your computer (where the project is placed) and find an appropriate report. You can easily open the report (html document) using your web browser.
+2.  Setting the interpreter and the path in Run/Debug configurations:
+
+  - select ```Run``` | ```Edit Configurations...```.
+
+  - click the ```+``` button and click ```Python``` on the list.
+
+  - select ```Script path``` and find the path to ```mainTest.py``` file.
+
+  - select proper ```Python interpreter``` from the list.
+
+  - click ```OK```.
+
+3.	Right-click on file mainTest.py.
+4.	Click on ```Run 'mainTest'``` or ```Debug 'mainTest'```.
+5.	When the process is finished, open 'Reports' folder created on your computer (where the project is placed) and find an appropriate report. You can easily open the report (html document) using your web browser.
+
 
 Example of report:
 

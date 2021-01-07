@@ -13,7 +13,7 @@
 
   - sequence of actions,
 
-  - amount of actions,
+  - number of actions,
 
   - data provided,
 
