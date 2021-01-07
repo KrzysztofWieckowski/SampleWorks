@@ -39,19 +39,18 @@ Steps to run:
 1.	Open Pycharm and the project python files.
 2.  Setting the interpreter and the path in Run/Debug configurations:
 
-  - select ```Run``` | ```Edit Configurations...```.
+  -  select ```Run``` | ```Edit Configurations...```
 
-  - click the ```+``` button and click ```Python``` on the list.
+  -  click the ```+``` button and click ```Python``` on the list.
 
-  - select ```Script path``` and find the path to ```mainTest.py``` file.
+  -  select ```Script path``` and find the path to ```mainTest.py``` file.
 
-  - select proper ```Python interpreter``` from the list.
-
-  - click ```OK```.
+  -  select proper ```Python interpreter``` from the list and click ```OK```.
 
 3.	Right-click on file mainTest.py.
 4.	Click on ```Run 'mainTest'``` or ```Debug 'mainTest'```.
 5.	When the process is finished, open 'Reports' folder created on your computer (where the project is placed) and find an appropriate report. You can easily open the report (html document) using your web browser.
+
 
 
 Example of report:
