@@ -37,7 +37,7 @@ I've uploaded  whole project with its internal structure. You can simply put it 
 Steps to run:
 
 1.	Open Pycharm and the project python files.
-2.  Setting the interpreter and the path in Run/Debug configurations:
+2.  Set the interpreter and the path in Run/Debug configurations:
 
   -  select ```Run``` | ```Edit Configurations...```
 
@@ -50,6 +50,7 @@ Steps to run:
 3.	Right-click on file mainTest.py.
 4.	Click on ```Run 'mainTest'``` or ```Debug 'mainTest'```.
 5.	When the process is finished, open 'Reports' folder created on your computer (where the project is placed) and find an appropriate report. You can easily open the report (html document) using your web browser.
+
 
 
 
