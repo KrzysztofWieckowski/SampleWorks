@@ -2,13 +2,17 @@
 # This demo project delivers a framework for website test automation.
 # It's a Sample Page Object Model test with www.flixbus.com. as an example.
 
-from selenium import webdriver
-import unittest
+
 import HtmlTestRunner
-from staticMethods import StaticMethods
 from searchPage import SearchPage
 from resultPage import ResultPage
 from dictionaries import Dictionaries
+import unittest
+import os
+import sys
+from selenium import webdriver
+from staticMethods import StaticMethods
+sys.path.append(os.path.join(os.path.dirname(__file__), os.pardir))
 
 
 class FlixbusTest(unittest.TestCase):
@@ -21,7 +25,7 @@ class FlixbusTest(unittest.TestCase):
         cls.driver.implicitly_wait(5)
         cls.driver.maximize_window()
         driver = cls.driver
-        driver.get("https://www.flixbus.com/")
+        cls.driver.get("https://www.flixbus.com/")
         # Accepting cookies:
         driver.find_element_by_id("cookie-consent-accept-all-button").click()
 
@@ -124,6 +128,17 @@ class FlixbusTest(unittest.TestCase):
             self.assertTrue(result.date2_assertion(Dictionaries.test_04.get("assert_date2")))
         with self.subTest("Checking if adults, children, bikes amount is equal to expected"):
             self.assertTrue(result.passengers_assertion(Dictionaries.test_04.get("assert_passengers")))
+
+    def setUp(self):
+        """addCleanup for making screenshot everytime a test has an assertion error or an exception."""
+        self.addCleanup(self.screen_shot)
+
+    def screen_shot(self):
+        """Screenshots a page when a subtest failed."""
+        test_method_name = self._testMethodName
+        for method, error in self._outcome.errors:
+            if error:
+                StaticMethods.save_screenshot_picture(self.driver, test_method_name)
 
     @classmethod
     def tearDownClass(cls):
