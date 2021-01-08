@@ -1,4 +1,4 @@
-# Learning testing with Python and Selenium.
+# Testing with Python and Selenium.
 **My sample works and exercises.**
 
 ---
