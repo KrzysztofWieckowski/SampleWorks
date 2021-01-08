@@ -10,7 +10,7 @@ You can easy create a new test changing:
 
 However please remember about the search logic in the UI of the website.
 
-The test creates reports and takes screenshots of failures (see the 'Example of test reports' folder above).
+The test creates reports and takes screenshots of failures (see the ```Example of test reports``` folder above).
 ---
 
 ## Requirements:
