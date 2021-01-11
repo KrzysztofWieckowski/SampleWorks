@@ -19,7 +19,7 @@
 
   - expected results.
 
-- The test creates reports and takes screenshots of failures.
+- The project creates reports and takes screenshots of failures.
 
 **Sample_POM_TEST_udemy.com**
 - A Page Object Model which performs sample end-to-end test on www.udemy.com.
