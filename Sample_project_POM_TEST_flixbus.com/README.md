@@ -57,9 +57,7 @@ Steps to run:
 
 Of course you can also easily run the project by opening ```mainTest.py``` file in ```CMD```.
 
-Of course you can easily run the project by opening ```mainTest.py``` file in ```CMD```.
-
-
+---
 
 Example of report:
 
