@@ -55,6 +55,9 @@ Steps to run:
 4.	Click on ```Run 'mainTest'``` or ```Debug 'mainTest'```.
 5.	When the process is finished, open 'Reports' folder created on your computer (where the project is placed) and find an appropriate report. You can easily open the report (html document) using your web browser.
 
+Of course you can also easily run the project by opening ```mainTest.py``` file in ```CMD```.
+
+Of course you can easily run the project by opening ```mainTest.py``` file in ```CMD```.
 
 
 
