@@ -31,9 +31,9 @@
 - Length_Modifier_By_Number.
 
   Modifies the length of the list by the given number.
-- test_Length Modifier_by_Number.
+- all_results_Length Modifier_by_Number.
 
-  Tests the Length_Modifier_By_Number. Runs all possible unit tests for selected arguments.
+  Tests the Length_Modifier_By_Number. Runs all possible results for selected arguments. You can also attach your own list or number.
 
 ---
 
