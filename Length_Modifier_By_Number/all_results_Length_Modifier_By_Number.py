@@ -6,7 +6,7 @@ from Length_Modifier_By_Number import LengthModifier
 # example_lists = ([], ["k", "l", "m", "n"])
 # example_boundary_numbers = (-1, 0, 1)
 # You can also attach any list in example_lists and number in example_boundary_numbers.
-# Please remember that the given number of elements (in test_numbers) must be > 0 and must be integer.
+# Please remember that the given numbers in example_boundary_numbers must be >0 and also must be integer.
 
 example_lists = ([], ["k", "l", "m", "n"])
 example_boundary_numbers = (-1, 0, 1)
