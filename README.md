@@ -33,7 +33,7 @@
   Modifies the length of the list by the given number.
 - all_results_Length Modifier_by_Number.
 
-  Tests the Length_Modifier_By_Number. Runs all possible results for selected arguments. You can also attach your own list or number.
+  Checks the Length_Modifier_By_Number. Runs all possible results for selected boundary values. You can also attach your own list or number.
 
 ---
 
