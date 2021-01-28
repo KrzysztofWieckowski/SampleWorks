@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from locators import Locators
+import time
 
 
 class ResultPage:
@@ -21,41 +22,34 @@ class ResultPage:
     """Methods for checking 
         expected results."""
 
-    def assertion_by_text(self, assertion):
-        WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, self.search_result_assertion_css))
-        )
-        expected_result_text = assertion
+    def assertion_by_text(self, expected_text):
+        time.sleep(10)
+
         result_text = self.driver.find_element_by_css_selector(self.search_result_assertion_css).text
-        if expected_result_text == result_text:
+        if expected_text == result_text:
             return True
 
-    def departure_assertion(self, assertion):
-        expected_result_text = assertion
+    def departure_assertion(self, expected_text):
         result_text = self.driver.find_element_by_xpath(self.search_departure_assertion_xpath).get_attribute("value")
-        if expected_result_text == result_text:
+        if expected_text == result_text:
             return True
 
-    def arrival_assertion(self, assertion):
-        expected_result_text = assertion
+    def arrival_assertion(self, expected_text):
         result_text = self.driver.find_element_by_xpath(self.search_arrival_assertion_xpath).get_attribute("value")
-        if expected_result_text == result_text:
+        if expected_text == result_text:
             return True
 
-    def date1_assertion(self, assertion):
-        expected_result_text = assertion
+    def date1_assertion(self, expected_text):
         result_text = self.driver.find_element_by_css_selector(self.search_date1_assertion_css).get_attribute("value")
-        if expected_result_text == result_text:
+        if expected_text == result_text:
             return True
 
-    def date2_assertion(self, assertion):
-        expected_result_text = assertion
+    def date2_assertion(self, expected_text):
         result_text = self.driver.find_element_by_css_selector(self.search_date2_assertion_css).get_attribute("value")
-        if expected_result_text == result_text:
+        if expected_text == result_text:
             return True
 
-    def passengers_assertion(self, assertion):
-        expected_result_text = assertion
+    def passengers_assertion(self, expected_text):
         result_text = self.driver.find_element_by_css_selector(self.search_passengers_assertion_css).get_attribute("value")
-        if expected_result_text == result_text:
+        if expected_text == result_text:
             return True

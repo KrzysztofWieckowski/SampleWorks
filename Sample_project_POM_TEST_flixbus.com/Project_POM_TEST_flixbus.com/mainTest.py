@@ -2,30 +2,26 @@
 # This demo project delivers a framework for website test automation.
 # It's a Sample Page Object Model test with www.flixbus.com. as an example.
 
-
+import unittest
+from selenium import webdriver
 import HtmlTestRunner
 from searchPage import SearchPage
 from resultPage import ResultPage
 from dictionaries import Dictionaries
-import unittest
-import os
-import sys
-from selenium import webdriver
 from staticMethods import StaticMethods
-sys.path.append(os.path.join(os.path.dirname(__file__), os.pardir))
 
 
 class FlixbusTest(unittest.TestCase):
-    """A test class to check how selected page elements works"""
+    """A test class which checks selected test cases and tests how page elements works."""
 
     @classmethod
     def setUpClass(cls):
         # Here you can select your web browser and path to its driver:
         cls.driver = webdriver.Chrome(executable_path='C:/Program Files (x86)/chromedriver.exe')
-        cls.driver.implicitly_wait(5)
-        cls.driver.maximize_window()
         driver = cls.driver
-        cls.driver.get("https://www.flixbus.com/")
+        driver.get("https://www.flixbus.com/")
+        driver.implicitly_wait(5)
+        driver.maximize_window()
         # Accepting cookies:
         driver.find_element_by_id("cookie-consent-accept-all-button").click()
 
@@ -35,7 +31,7 @@ class FlixbusTest(unittest.TestCase):
         expected_title = Dictionaries.test_01.get("title")
         self.assertEqual(driver.title, expected_title, "Wrong page title")
 
-    def test_02_check_page_elements_availability(self):
+    def test_02_check_page_elements(self):
         """Test_02 Checks page elements availability before starting the proper tests."""
         driver = self.driver
         check = SearchPage(driver)
@@ -69,7 +65,7 @@ class FlixbusTest(unittest.TestCase):
 
     def test_03_sample_search_test(self):
         """Test_03 Runs and checks a sample test case.
-        Uses test_03 dictionary from dictionaries module."""
+        Uses test_03 dictionary from 'dictionaries.py' module."""
         driver = self.driver
         search = SearchPage(driver)
 
@@ -100,7 +96,7 @@ class FlixbusTest(unittest.TestCase):
 
     def test_04_sample_search_test_with_fail(self):
         """Test_03 Runs and checks a sample test case. One subtest is intentionally failed.
-        Uses test_04 dictionary from dictionaries module."""
+        Uses test_04 dictionary from 'dictionaries.py' module."""
         driver = self.driver
         driver.get("https://www.flixbus.com/")
         search = SearchPage(driver)
@@ -147,6 +143,6 @@ class FlixbusTest(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    folder = StaticMethods.reports_folder()
+    folder = StaticMethods.report_folder()
     unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(
         output=folder), verbosity=2)

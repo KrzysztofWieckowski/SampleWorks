@@ -4,9 +4,8 @@ import os
 
 class StaticMethods:
     """Method that creates folder with current date for reports and returns path to it."""
-
     @staticmethod
-    def reports_folder():
+    def report_folder():
         date = StaticMethods.get_date()
         dir = os.path.normpath(os.path.join(os.path.dirname(__file__), os.pardir))
         folder = dir + "/Reports/Reports" + date + "/"
@@ -27,16 +26,6 @@ class StaticMethods:
         screenshot_folder = StaticMethods.report_folder()
         picture = screenshot_folder + file_name + ' ' + date_time + '.png'
         driver.save_screenshot(picture)
-
-    """Method which creates folder with current date for reports and returns path to it."""
-    @staticmethod
-    def report_folder():
-        date = StaticMethods.get_date()
-        dir = os.path.normpath(os.path.join(os.path.dirname(__file__), os.pardir))
-        folder = dir + "/Reports/Reports" + date + "/"
-        if not os.path.exists(folder):
-            os.makedirs(folder)
-        return folder
 
     """Method for getting current date and time."""
     @staticmethod

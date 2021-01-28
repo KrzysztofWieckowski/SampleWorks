@@ -12,16 +12,16 @@ class SearchPage:
         self.select_one_way_flight_css = Locators.select_one_way_flight_css
         self.select_two_ways_flight_css = Locators.select_two_ways_flight_css
         self.insert_departure_xpath = Locators.insert_departure_xpath
-        self.departure_list_first_css = Locators.departure_list_first_css
+        self.departure_list_first_xpath = Locators.departure_list_first_xpath
         self.insert_arrival_xpath = Locators.insert_arrival_xpath
-        self.arrival_list_first_css = Locators.arrival_list_first_css
+        self.arrival_list_first_xpath = Locators.arrival_list_first_xpath
         self.replace_destinations_xpath = Locators.replace_destinations_xpath
         self.insert_date1_css = Locators.insert_date1_css
         self.insert_date2_css = Locators.insert_date2_css
         self.next_month_button_css = Locators.next_month_button_css
         self.month_and_year_heading_css = Locators.month_and_year_heading_css
         self.insert_passengers_css = Locators.insert_passengers_css
-        self.add_adult_css = Locators.add_adult_css
+        self.add_adult_xpath = Locators.add_adult_xpath
         self.add_child_css = Locators.add_child_css
         self.add_bike_css = Locators.add_bike_css
         self.search_button_css = Locators.search_button_css
@@ -37,11 +37,11 @@ class SearchPage:
 
     def insert_departure(self, departure):
         self.driver.find_element_by_xpath(self.insert_departure_xpath).send_keys(departure)
-        self.driver.find_element_by_css_selector(self.departure_list_first_css).click()
+        self.driver.find_element_by_xpath(self.departure_list_first_xpath).click()
 
     def insert_arrival(self, arrival):
         self.driver.find_element_by_xpath(self.insert_arrival_xpath).send_keys(arrival)
-        self.driver.find_element_by_css_selector(self.arrival_list_first_css).click()
+        self.driver.find_element_by_xpath(self.arrival_list_first_xpath).click()
 
     def replace_destinations(self):
         self.driver.find_element_by_xpath(self.replace_destinations_xpath).click()
@@ -64,7 +64,7 @@ class SearchPage:
 
     def set_adults_amount(self):
         self.driver.find_element_by_css_selector(self.insert_passengers_css).click()
-        self.driver.find_element_by_css_selector(self.add_adult_css).click()
+        self.driver.find_element_by_xpath(self.add_adult_xpath).click()
 
     def set_children_amount(self):
         self.driver.find_element_by_css_selector(self.insert_passengers_css).click()
@@ -111,7 +111,7 @@ class SearchPage:
 
     def check_adults_button(self):
         self.driver.find_element_by_css_selector(self.insert_passengers_css).click()
-        return self.driver.find_element_by_css_selector(self.add_adult_css).is_enabled()
+        return self.driver.find_element_by_xpath(self.add_adult_xpath).is_enabled()
 
     def check_children_button(self):
         self.driver.find_element_by_css_selector(self.insert_passengers_css).click()
