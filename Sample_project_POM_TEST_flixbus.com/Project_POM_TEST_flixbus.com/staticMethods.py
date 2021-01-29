@@ -3,6 +3,8 @@ import os
 
 
 class StaticMethods:
+    """A class for static methods."""
+
     """Method that creates folder with current date for reports and returns path to it."""
     @staticmethod
     def report_folder():

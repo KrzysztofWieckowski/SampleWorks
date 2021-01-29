@@ -21,7 +21,7 @@ class SearchPage:
         self.next_month_button_css = Locators.next_month_button_css
         self.month_and_year_heading_css = Locators.month_and_year_heading_css
         self.insert_passengers_css = Locators.insert_passengers_css
-        self.add_adult_xpath = Locators.add_adult_xpath
+        self.add_adult_css = Locators.add_adult_css
         self.add_child_css = Locators.add_child_css
         self.add_bike_css = Locators.add_bike_css
         self.search_button_css = Locators.search_button_css
@@ -64,7 +64,7 @@ class SearchPage:
 
     def set_adults_amount(self):
         self.driver.find_element_by_css_selector(self.insert_passengers_css).click()
-        self.driver.find_element_by_xpath(self.add_adult_xpath).click()
+        self.driver.find_element_by_css_selector(self.add_adult_css).click()
 
     def set_children_amount(self):
         self.driver.find_element_by_css_selector(self.insert_passengers_css).click()
@@ -111,7 +111,7 @@ class SearchPage:
 
     def check_adults_button(self):
         self.driver.find_element_by_css_selector(self.insert_passengers_css).click()
-        return self.driver.find_element_by_xpath(self.add_adult_xpath).is_enabled()
+        return self.driver.find_element_by_css_selector(self.add_adult_css).is_enabled()
 
     def check_children_button(self):
         self.driver.find_element_by_css_selector(self.insert_passengers_css).click()

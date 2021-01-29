@@ -13,7 +13,7 @@ class Locators:
     next_month_button_css = ".flix-icon-arrow-right"
     month_and_year_heading_css = ".DayPicker-Month:nth-child(1) > .DayPicker-Caption > div"
     insert_passengers_css = "[placeholder='Please add passengers...']"
-    add_adult_xpath = "//*[@id='search-mask-component']/div/div/div[4]/div/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/button[2]"
+    add_adult_css = ".\_1f35C:nth-child(1) .flix-icon-plus"
     add_child_css = ".\_1f35C:nth-child(2) .flix-icon-plus"
     add_bike_css = ".\_1f35C:nth-child(3) .flix-icon-plus"
     search_button_css = "[data-e2e='search-button']"

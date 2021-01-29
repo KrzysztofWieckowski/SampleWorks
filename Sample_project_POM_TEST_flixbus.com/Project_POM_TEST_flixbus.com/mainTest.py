@@ -126,7 +126,7 @@ class FlixbusTest(unittest.TestCase):
             self.assertTrue(result.passengers_assertion(Dictionaries.test_04.get("assert_passengers")))
 
     def setUp(self):
-        """addCleanup for making screenshot everytime a test has an assertion error or an exception."""
+        """addCleanup for making screenshot anytime a test has an assertion error or an exception."""
         self.addCleanup(self.screen_shot)
 
     def screen_shot(self):

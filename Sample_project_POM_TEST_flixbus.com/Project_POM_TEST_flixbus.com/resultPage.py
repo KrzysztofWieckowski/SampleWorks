@@ -2,7 +2,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from locators import Locators
-import time
 
 
 class ResultPage:
@@ -23,7 +22,8 @@ class ResultPage:
         expected results."""
 
     def assertion_by_text(self, expected_text):
-        time.sleep(10)
+        wait = WebDriverWait(self.driver, 10)
+        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, self.search_result_assertion_css)))
 
         result_text = self.driver.find_element_by_css_selector(self.search_result_assertion_css).text
         if expected_text == result_text:
