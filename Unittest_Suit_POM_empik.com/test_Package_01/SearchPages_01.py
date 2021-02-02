@@ -7,7 +7,6 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import time
 
 # Global variables for product name assertions:
 product_name_1 = ""
@@ -49,7 +48,6 @@ class MainPage(BasePage):
         self.driver.execute_script("window.scrollBy(0, 500)", "")
         hover = ActionChains(self.driver).move_to_element(product).move_to_element(add_to_cart)
         hover.click().perform()
-        time.sleep(2)
         self.driver.find_element(*Locators.CART_BUTTON).click()
 
 
