@@ -5,13 +5,13 @@
 import unittest
 from selenium import webdriver
 import Page
-import time
+
 
 class UdemySearch(unittest.TestCase):
     """A test class to show how selected page elements works"""
 
     def setUp(self):
-        self.driver = webdriver.Chrome("C:\Program Files (x86)\chromedriver.exe")
+        self.driver = webdriver.Chrome("C:/Program Files (x86)/chromedriver.exe")
         # Here you can select your web browser and path to its driver.
         self.driver.get("https://www.udemy.com/")
         self.driver.maximize_window()
@@ -39,4 +39,3 @@ class UdemySearch(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

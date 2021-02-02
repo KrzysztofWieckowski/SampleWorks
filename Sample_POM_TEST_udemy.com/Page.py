@@ -1,14 +1,17 @@
 from Locators import *
 from Elements import BasePageElement
 
+
 class SearchTextElement(BasePageElement):
     """This class gets the search text from the specified locator"""
     locator = "q"
+
 
 class BasePage(object):
     """Base class to initialize the base page that will be called from all pages"""
     def __init__(self, driver):
         self.driver = driver
+
 
 class MainPage(BasePage):
     """Home page action methods come here - udemy.org"""
@@ -20,6 +23,7 @@ class MainPage(BasePage):
     def click_go_button(self):
         element = self.driver.find_element(*MainPageLocators.GO_BUTTON)
         element.click()
+
 
 class SearchResultPage(BasePage):
     """Search results page action methods come here"""

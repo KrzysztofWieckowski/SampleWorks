@@ -7,7 +7,7 @@
 
 **Sample_project_POM_TEST_flixbus.com**
 
-- This demo project delivers a framework for website test automation. It's a sample Page Object Model test (with www.flixbus.com. as an example).
+- This demo project delivers a framework for website test automation. It's a sample PAGE OBJECT MODEL test (with www.flixbus.com. as an example).
 
 - You can easily create a new test changing:
 
@@ -21,8 +21,12 @@
 
 - The project creates reports and takes screenshots of failures.
 
-**Sample_POM_TEST_udemy.com**
-- A Page Object Model which performs sample end-to-end test on www.udemy.com.
+**Unittest_Suit_POM_empik.com**
+- A Page Object Model which performs sample end-to-end tests on www.empik.com.
+
+- Demonstrates the use of UNITTEST FRAMEWORK suits.
+
+- You can easily create a new test changing input data.
 
 **Sample_TEST_emailservice_wp.pl**
 - Removes Spam and empties Trash in www.wp.pl email service.
