@@ -29,13 +29,11 @@ I've uploaded  whole project with its internal structure. You can simply put it 
 Steps to run:
 
 1.	Open Pycharm and the project python files.
-2.  Set the interpreter and the path in Run/Debug configurations:
+2.  Set the interpreter for the project folder:
 
-  -  select ```Run``` | ```Edit Configurations...```
+  -  select ```File``` | ```Settings...```
 
-  -  click the ```+``` button and click ```Python``` on the list.
-
-  -  select ```Script path``` and find the path to ```mainTest.py``` file.
+  -  select ```Project``` and click ```Python interpreter``` on the list.
 
   -  select proper ```Python interpreter``` from the list and click ```OK```.
 

@@ -16,7 +16,6 @@ class EmpikSearch02(unittest.TestCase):
         # Here you can select your web browser and a path to its driver:
         self.driver = webdriver.Chrome("C:/Program Files (x86)/chromedriver.exe")
         self.driver.get("https://www.empik.com/")
-        self.driver.implicitly_wait(5)
         self.driver.maximize_window()
 
     def test_01_page_title(self):

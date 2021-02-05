@@ -26,6 +26,9 @@ class MainPage(BasePage):
         return TestData.test_data_01["page_title"] in self.driver.title
 
     def input_text(self):
+        wait = WebDriverWait(self.driver, 10)
+        wait.until(EC.element_to_be_clickable((By.ID, Locators.SEARCH_BOX_id)))
+
         text = TestData.test_data_01["search_text"]
         self.driver.find_element(*Locators.SEARCH_BOX).clear()
         self.driver.find_element(*Locators.SEARCH_BOX).send_keys(text)
@@ -48,6 +51,7 @@ class MainPage(BasePage):
         self.driver.execute_script("window.scrollBy(0, 500)", "")
         hover = ActionChains(self.driver).move_to_element(product).move_to_element(add_to_cart)
         hover.click().perform()
+
         self.driver.find_element(*Locators.CART_BUTTON).click()
 
 

@@ -16,7 +16,6 @@ class EmpikSearch03(unittest.TestCase):
         # Here you can select your web browser and a path to its driver:
         self.driver = webdriver.Chrome("C:/Program Files (x86)/chromedriver.exe")
         self.driver.get("https://www.empik.com/")
-        self.driver.implicitly_wait(5)
         self.driver.maximize_window()
 
     @unittest.SkipTest           # Decorator to skip the page title test which will be done in MainTest_02
