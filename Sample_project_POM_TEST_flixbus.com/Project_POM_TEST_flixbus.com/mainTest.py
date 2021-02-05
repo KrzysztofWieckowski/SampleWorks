@@ -1,4 +1,5 @@
-# Sample_project_POM_TEST_flixbus.com
+# mainTest.
+
 # This demo project delivers a framework for website test automation.
 # It's a Sample Page Object Model test with www.flixbus.com. as an example.
 

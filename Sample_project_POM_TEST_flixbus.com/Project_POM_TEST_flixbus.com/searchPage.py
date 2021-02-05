@@ -1,5 +1,10 @@
+# searchPage.
+
 from locators import Locators
 from dictionaries import Dictionaries
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
 
 
 class SearchPage:
@@ -81,6 +86,8 @@ class SearchPage:
     search page elements availability."""
 
     def check_one_way_flight_button(self):
+        wait = WebDriverWait(self.driver, 10)
+        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, self.select_one_way_flight_css)))
         return self.driver.find_element_by_css_selector(self.select_one_way_flight_css).is_enabled()
 
     def check_two_ways_flight_button(self):

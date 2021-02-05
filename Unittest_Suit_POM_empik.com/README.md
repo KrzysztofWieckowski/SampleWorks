@@ -4,7 +4,7 @@ This demo project delivers a framework for website test automation. It's a Sampl
 
 Demonstrates the use of unittest framework suits.
 
-You can easily create a new test changing data provided in module 'tests_data.py'.
+You can easily create new test suits changing data provided in module 'tests_data.py'.
 
 ---
 

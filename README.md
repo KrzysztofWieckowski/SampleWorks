@@ -26,7 +26,7 @@
 
 - Demonstrates the use of UNITTEST FRAMEWORK suits.
 
-- You can easily create a new test changing input data.
+- You can easily create new test suits changing input data.
 
 **Sample_TEST_emailservice_wp.pl**
 - Removes Spam and empties Trash in www.wp.pl email service.
