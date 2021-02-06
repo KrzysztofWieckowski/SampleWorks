@@ -28,8 +28,10 @@
 
 - You can easily create new test suits changing input data.
 
-**Sample_TEST_emailservice_wp.pl**
+**Pytest_emailservice_wp.pl**
 - Removes Spam and empties Trash in www.wp.pl email service.
+
+- Demonstrates the use of PYTEST FRAMEWORK.
 
 **Length_Modifier_By_Number**
 - Length_Modifier_By_Number.
