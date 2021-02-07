@@ -20,6 +20,20 @@ import pytest
 
 
 def test_email_service():
+
+    # Locators:
+    login_textbox_id = "login"
+    submit_button_class = "notificationWrapper"
+    spam_button_xpath = "//*[@id='folder-5']/span/span"
+    spam_confirm_xpath = "/html/body/div[4]/div[2]/div/div[3]/button[2]"
+    trash_button_xpath = "//span[contains(text(), 'opróżnij')]"
+    waste_confirm_css = "[class='Button Button--cta']"
+    actual_text_class = "empty-state__title"
+    spam_folder_id = "folder-5"
+    waste_folder_id = "folder-3"
+    actual_text2_class = "empty-state__title"
+    logout_id = "Logout-Button"
+
     # Here you can select your web browser and path to its driver:
     PATH = "C:/Program Files (x86)/chromedriver.exe"
     driver = webdriver.Chrome(PATH)
@@ -28,23 +42,23 @@ def test_email_service():
     driver.maximize_window()
 
     """Login and password"""
-    textbox1 = driver.find_element_by_id("login")
+    textbox1 = driver.find_element_by_id(login_textbox_id)
     textbox1.clear()
     # Below, between quotation marks, please put your login.
-    textbox1.send_keys("--------------")
+    textbox1.send_keys("____________________")
 
     textbox2 = driver.find_element_by_id("password")
     textbox2.clear()
     # Below, between quotation marks, please put your password.
-    textbox2.send_keys("--------------")
+    textbox2.send_keys("____________________")
 
-    submit_button = driver.find_element_by_class_name("notificationWrapper")
+    submit_button = driver.find_element_by_class_name(submit_button_class)
     submit_button.click()
 
     """Spam removal"""
     try:
         spam_button = WebDriverWait(driver, 20).until(
-            EC.presence_of_element_located((By.XPATH, "//*[@id='folder-5']/span/span"))
+            EC.presence_of_element_located((By.XPATH, spam_button_xpath))
         )
         spam_button.click()
     except NoSuchElementException:
@@ -52,7 +66,7 @@ def test_email_service():
 
     try:
         spam_confirm = WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.XPATH, "/html/body/div[4]/div[2]/div/div[3]/button[2]"))
+            EC.presence_of_element_located((By.XPATH, spam_confirm_xpath))
         )
         spam_confirm.click()
     except NoSuchElementException:
@@ -61,21 +75,21 @@ def test_email_service():
     """Trash removal"""
     try:
         trash_button = WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.XPATH, "//span[contains(text(), 'opróżnij')]"))
+            EC.presence_of_element_located((By.XPATH, trash_button_xpath))
         )
         trash_button.click()
     except NoSuchElementException:
         print("Trash removal error")
-    waste_confirm = driver.find_element_by_css_selector("[class='Button Button--cta']")
+    waste_confirm = driver.find_element_by_css_selector(waste_confirm_css)
     waste_confirm.click()
 
     """Assertion: Spam folder is empty"""
     time.sleep(3)
-    spam_folder = driver.find_element_by_id("folder-5")
+    spam_folder = driver.find_element_by_id(spam_folder_id)
     spam_folder.click()
     try:
         actual = WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.CLASS_NAME, "empty-state__title"))
+            EC.presence_of_element_located((By.CLASS_NAME, actual_text_class))
         )
         actual_text = actual.text
     except NoSuchElementException:
@@ -84,11 +98,11 @@ def test_email_service():
     assert expected_text == actual_text, f'Error. Expected text: {expected_text}, but Actual text: {actual_text}'
 
     """Assertion: Trash folder is empty"""
-    waste_folder = driver.find_element_by_id("folder-3")
+    waste_folder = driver.find_element_by_id(waste_folder_id)
     waste_folder.click()
     try:
         actual2 = WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.CLASS_NAME, "empty-state__title"))
+            EC.presence_of_element_located((By.CLASS_NAME, actual_text2_class))
         )
         actual_text2 = actual2.text
     except NoSuchElementException:
@@ -97,7 +111,7 @@ def test_email_service():
     assert expected_txt == actual_text2, f'Error. Expected text: {expected_txt}, but Actual text: {actual_text2}'
 
     """Logging out"""
-    logout = driver.find_element_by_id("Logout-Button").click()
+    logout = driver.find_element_by_id(logout_id).click()
     print("Test finished - OK")
     driver.close()
     driver.quit()
