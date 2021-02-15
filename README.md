@@ -7,7 +7,7 @@
 
 **Sample_project_POM_TEST_flixbus.com**
 
-- This demo project delivers a framework for website test automation. It's a sample PAGE OBJECT MODEL test (with www.flixbus.com. as an example).
+- This demo project delivers a framework for website test automation. It's a sample PAGE OBJECT MODEL (with www.flixbus.com. as an example). Tests the main website's search engine.
 
 - You can easily create a new test changing:
 
@@ -24,7 +24,7 @@
 **Unittest_Suit_POM_empik.com**
 - A Page Object Model which performs sample end-to-end tests on www.empik.com.
 
-- Demonstrates the use of UNITTEST FRAMEWORK suits.
+- Demonstrates the use of UNITTEST FRAMEWORK suits - tests selecting products and adding to the cart.
 
 - You can easily create new test suits changing input data.
 

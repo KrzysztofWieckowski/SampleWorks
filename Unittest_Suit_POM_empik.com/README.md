@@ -1,6 +1,6 @@
 # Sample unittest suit (POM with Selenium and Python).
 
-This demo project delivers a framework for website test automation. It's a Sample Page Object Model test (with www.empik.com. as an example).
+This demo project delivers a framework for website test automation. It's a Sample Page Object Model test (with www.empik.com. as an example). Tests selecting products and adding to the cart.
 
 Demonstrates the use of unittest framework suits.
 
