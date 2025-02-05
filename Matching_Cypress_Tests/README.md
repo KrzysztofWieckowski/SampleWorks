@@ -1,53 +1,40 @@
-# Testing with Python and Selenium.
-**My sample works and exercises.**
-
----
+# Testing with Cypress and Typescript
 
 ## Contents.
+This project delivers a test automation examples for static html.
 
-**Sample_project_POM_TEST_flixbus.com**
+It is an example of Cypress framework capabilities, it contains add-on cypress library mochawesome-reporter
 
-- This demo project delivers a framework for website test automation. It's a sample PAGE OBJECT MODEL (with www.flixbus.com. as an example). Tests the main website's search engine.
+It uses various Cypress utility functions like: commands, enums, helpers
 
-- You can easily create a new test changing:
+The project is made partially in Page Object Model (POM) design pattern
 
-    - sequence of actions,
+## Requirements.
+1) Download and install Node.js LTS on your operating system
+2) Install dependencies in project main folder type in terminal: npm i
 
-    - number of actions,
+## How to run.
+To run in browser type "npx cypress open" it should open Cypress window
 
-    - data provided,
+      choose E2E Testing and click on it
+  
+      choose a browser and click "Start e2e Testing in Electron" button
+  
+      in new window select suite you want to run
 
-    - expected results.
 
-- The project creates reports and takes screenshots of failures.
 
-**Unittest_Suit_POM_empik.com**
-- A Page Object Model which performs sample end-to-end tests on www.empik.com.
+To run in headless mode type "npx cypress run" it should start runing all tests in terminal
 
-- Demonstrates the use of UNITTEST FRAMEWORK suits - tests selecting products and adding to the cart.
-
-- You can easily create new test suits changing input data.
-
-**Pytest_emailservice_wp.pl**
-- Removes Spam and empties Trash in www.wp.pl email service.
-
-- Demonstrates the use of PYTEST FRAMEWORK.
-
-**Length_Modifier_By_Number**
-- Length_Modifier_By_Number.
-
-  Modifies the length of the list by the given number.
-- all_results_Length Modifier_by_Number.
-
-  Checks the Length_Modifier_By_Number. Runs all possible results for selected boundary values. You can also attach your own list or number.
-
----
+      after tests are finished you can check the web page with report summary in cypress/reports index.html (open in browser)
+  
+      tests failures screenshots in cypress/screenshots/{suite name}
 
 ## Technologies.
-Python 3.8.
+TypeScript - https://www.typescriptlang.org/
 
-Selenium Webdriver version 3.141.0.
+Node.js - https://nodejs.org/en
 
-JetBrains PyCharm Community Edition 2020.2.3.
+Cypress - https://www.cypress.io/
 
-html-testRunner 1.2.1.
+Mochawesome-reporter - https://www.npmjs.com/package/cypress-mochawesome-reporter# 
