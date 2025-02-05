@@ -1,40 +1,53 @@
-# Testing with Cypress and Typescript 
+# Testing with Python and Selenium.
+**My sample works and exercises.**
+
+---
 
 ## Contents.
-This project delivers a test automation examples for 2 static html pages.
 
-It is an example of Cypress framework capabilities, it contains add-on cypress library mochawesome-reporter
+**Sample_project_POM_TEST_flixbus.com**
 
-it uses various Cypress utility functions like: commands, fixtures, config urls
+- This demo project delivers a framework for website test automation. It's a sample PAGE OBJECT MODEL (with www.flixbus.com. as an example). Tests the main website's search engine.
 
-The project is made partially in Page Object Model (POM) design pattern
+- You can easily create a new test changing:
 
-## Requirements.
-1) Download and install Node.js LTS on your operating system
-2) Install dependencies in project main folder type in terminal: npm i
+    - sequence of actions,
 
-## How to run.
-To run in browser type "npx cypress open" it should open Cypress window
-  
-      choose E2E Testing and click on it
-  
-      choose a browser and click "Start e2e Testing in Electron" button
-  
-      in new window select suite you want to run
+    - number of actions,
 
+    - data provided,
 
+    - expected results.
 
-To run in headless mode type "npx cypress run" it should start runing all tests in terminal
-  
-      after tests are finished you can check the web page with report summary in cypress/reports index.html (open in browser)
-  
-      tests failures screenshots in cypress/screenshots/{suite name}
+- The project creates reports and takes screenshots of failures.
+
+**Unittest_Suit_POM_empik.com**
+- A Page Object Model which performs sample end-to-end tests on www.empik.com.
+
+- Demonstrates the use of UNITTEST FRAMEWORK suits - tests selecting products and adding to the cart.
+
+- You can easily create new test suits changing input data.
+
+**Pytest_emailservice_wp.pl**
+- Removes Spam and empties Trash in www.wp.pl email service.
+
+- Demonstrates the use of PYTEST FRAMEWORK.
+
+**Length_Modifier_By_Number**
+- Length_Modifier_By_Number.
+
+  Modifies the length of the list by the given number.
+- all_results_Length Modifier_by_Number.
+
+  Checks the Length_Modifier_By_Number. Runs all possible results for selected boundary values. You can also attach your own list or number.
+
+---
 
 ## Technologies.
-TypeScript - https://www.typescriptlang.org/
+Python 3.8.
 
-Node.js - https://nodejs.org/en
+Selenium Webdriver version 3.141.0.
 
-Cypress - https://www.cypress.io/
+JetBrains PyCharm Community Edition 2020.2.3.
 
-Mochawesome-reporter - https://www.npmjs.com/package/cypress-mochawesome-reporter
+html-testRunner 1.2.1.
