@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Overview</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .main-title {
+            font-size: 24px;
+            color: #1a2b3c;
+            font-weight: 600;
+        }
+
+        .capital-info {
+            font-size: 16px;
+            color: #4a5b6c;
+        }
+
+        .metrics-row {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .metrics-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        .metric-item {
+            margin-bottom: 1rem;
+        }
+
+        .metric-label {
+            color: #6b7c8f;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .metric-value {
+            font-size: 18px;
+            color: #1a2b3c;
+            font-weight: 500;
+        }
+
+        .chart-placeholder {
+            background: white;
+            height: 200px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9aa8b6;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        .section-title {
+            font-size: 18px;
+            color: #1a2b3c;
+            margin: 2rem 0 1rem;
+            font-weight: 600;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .property-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        .property-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .property-type {
+            font-size: 12px;
+            color: #6b7c8f;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .property-address {
+            font-size: 14px;
+            color: #1a2b3c;
+            margin-bottom: 0.5rem;
+        }
+
+        .financial-metrics {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .metric-block {
+            flex: 1;
+        }
+
+        .metric-title {
+            font-size: 12px;
+            color: #6b7c8f;
+            margin-bottom: 4px;
+        }
+
+        .metric-value {
+            font-size: 14px;
+            color: #1a2b3c;
+            font-weight: 500;
+        }
+
+        .ltv-badge {
+            color: #2ecc71;
+            font-weight: 600;
+        }
+
+        .interest-badge {
+            color: #3498db;
+            font-weight: 600;
+        }
+
+        .status-tag {
+            font-size: 12px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            background: #f0f2f5;
+            color: #6b7c8f;
+        }
+
+        .amount-text {
+            color: #1a2b3c;
+            font-weight: 600;
+        }
+
+        .sold-section {
+            border-top: 1px solid #e0e5eb;
+            padding-top: 1rem;
+            margin-top: 1rem;
+        }
+
+        .sold-date {
+            font-size: 12px;
+            color: #6b7c8f;
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="main-title">Portfolio Overview</h1>
+            <div class="capital-info">Annual capital to deploy $10,000,000</div>
+        </div>
+
+        <div class="metrics-row">
+            <div class="metrics-box">
+                <div class="metric-item">
+                    <div class="metric-label">Deployed</div>
+                    <div class="metric-value">IRR 0%</div>
+                    <div class="metric-value">Average LTV N/A</div>
+                </div>
+            </div>
+            <div class="chart-placeholder">Profit Chart</div>
+        </div>
+
+        <h2 class="section-title">Suggested for you</h2>
+        <div class="card-grid">
+            <div class="property-card">
+                <div class="property-header">
+                    <span class="status-tag">Posted for you</span>
+                </div>
+                <div class="property-address">1529 Brooklyn Ave, Brooklyn, NY, 11210</div>
+                <div data-cy="suggested" class="property-type">Multi Family • Fix and Flip</div>
+                <div class="financial-metrics">
+                    <div class="metric-block">
+                        <div class="metric-title">LTV</div>
+                        <div class="ltv-badge metric-value">50.25%</div>
+                    </div>
+                    <div class="metric-block">
+                        <div class="metric-title">Interest</div>
+                        <div class="interest-badge metric-value">12%</div>
+                    </div>
+                </div>
+                <div class="metric-title">Decal Analysis</div>
+                <div class="amount-text">$5,100,000</div>
+            </div>
+
+            <!-- Add more cards following same structure -->
+        </div>
+
+        <h2 class="section-title">Deals in Closing Process</h2>
+        <div class="card-grid">
+            <div class="property-card">
+                <div class="property-header">
+                    <span class="status-tag">Non-Performing</span>
+                </div>
+                <div class="property-address">3407 South Shore Dr, Delavan, WI, 53115</div>
+                <div data-cy="closing" class="property-type">STR Bridge - Mortgage refinance</div>
+                <div class="financial-metrics">
+                    <div class="metric-block">
+                        <div class="metric-title">LTV</div>
+                        <div class="ltv-badge metric-value">65%</div>
+                    </div>
+                    <div class="metric-block">
+                        <div class="metric-title">Interest</div>
+                        <div class="interest-badge metric-value">12%</div>
+                    </div>
+                </div>
+                <div class="metric-title">Decal Analysis</div>
+                <div class="amount-text">$2,603,127</div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Portfolio</h2>
+        <div class="property-card">
+            <div class="property-header">
+                <span class="status-tag">On Market</span>
+            </div>
+            <div class="property-address">1529 Brooklyn Ave, Brooklyn, NY, 11210</div>
+            <div class="property-type">Multi Family • Fix and Flip</div>
+            <div class="financial-metrics">
+                <div class="metric-block">
+                    <div class="metric-title">LTV</div>
+                    <div class="ltv-badge metric-value">60.22%</div>
+                </div>
+                <div class="metric-block">
+                    <div class="metric-title">Interest payments</div>
+                    <div class="amount-text">$2,492,216</div>
+                </div>
+            </div>
+
+            <div class="sold-section">
+                <div class="sold-date">Sold On Jan 27, 2025</div>
+                <div class="property-address">1268 Teller Ave, Bronx, NY, 10456</div>
+                <div class="property-type">Multi Family Construction Completion</div>
+                <div class="financial-metrics">
+                    <div class="metric-block">
+                        <div class="metric-title">LTV</div>
+                        <div class="ltv-badge metric-value">63%</div>
+                    </div>
+                    <div class="metric-block">
+                        <div class="metric-title">Interest payments</div>
+                        <div class="amount-text">$715,000</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

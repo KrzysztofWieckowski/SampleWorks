@@ -1,56 +1,142 @@
-import MainPage from "../pages/mainPage";
-import "@4tw/cypress-drag-drop";
+import {CHECKBOXES, ENTITIES, LOCATOR, PAGES} from "./enums";
+import {expectedEntities, sortAscending, validateChanges} from "./helpers";
 
-/// <reference types="cypress" />
-// ***********************************************
-// This example commands.ts shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-//
-// declare global {
-//   namespace Cypress {
-//     interface Chainable {
-//       login(email: string, password: string): Chainable<void>
-//       drag(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-//       dismiss(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-//       visit(originalFn: CommandOriginalFn, url: string, options: Partial<VisitOptions>): Chainable<Element>
-//     }
-//   }
-// }
-
-Cypress.Commands.add("selectOnCalendar", () => {
-  MainPage.clickBookRoomBtn();
-  cy.get(".rbc-button-link")
-    .contains("02")
-    .drag('.rbc-date-cell:not(".rbc-off-range"):nth(20)');
+Cypress.Commands.add("getByDC", (dataCy) => {
+    cy.get(`[data-cy='${dataCy}']`);
 });
 
-Cypress.Commands.add("goodBooking", () => {
-  cy.selectOnCalendar();
-  MainPage.typeBookingFirstName("Andrzej");
-  MainPage.typeBookingLastName("Godzion");
-  MainPage.typeBookingEmail("example@mail.com");
-  MainPage.typeBookingPhone("12345678901");
-  MainPage.clickBookBtn();
+Cypress.Commands.add("clickByDC", (dataCy) => {
+    cy.getByDC(dataCy).click();
+});
+
+Cypress.Commands.add("verifyEntityNames", () => {
+    // arrange
+    let allEntities: string[] = [];
+
+    // act
+    cy.getByDC(LOCATOR.ENTITY).each((element) => {
+        allEntities.push(element.text());
+    }).then(() => {
+
+        // assert
+        expect(allEntities.length).to.eq(expectedEntities().length);
+        expectedEntities().forEach((expectedEntity) => {
+            expect(allEntities).to.include(expectedEntity);
+        });
+    });
+});
+
+Cypress.Commands.add("addNewInvestor", (newEntity) => {
+    // arrange
+
+    /* ADDING NEW INVESTOR
+
+    cy.clickByDC(LOCATOR.ADD_INVESTOR_BTN)
+    cy.clickByDC(LOCATOR.SAVE_INVESTOR_BTN)
+
+    + an assertion that the new investor is added/saved correctly
+
+    */
+});
+
+Cypress.Commands.add("verifyEntityName", (expectedEntity) => {
+    // arrange
+    let entities: string[] = [];
+
+    cy.addNewInvestor(ENTITIES.NEW_ENTITY);
+
+    // act
+    cy.getByDC(LOCATOR.ENTITY).each((element) => {
+        entities.push(element.text());
+    }).then(() => {
+
+        // assert
+        expect(entities).to.include(expectedEntity);
+    });
+});
+
+Cypress.Commands.add("verifyMatching", () => {
+    // I assume that the order of entities records does not change after pressing the matching button!!!
+    // arrange
+    let allStatuses: string[] = [];
+    let newStatuses: string[] = [];
+    const suggestedEntity = expectedEntities()[0];
+    const closingEntity = expectedEntities()[1];
+
+    // act
+    cy.getByDC(LOCATOR.STATUS).each((element) => {
+        allStatuses.push(element.text());
+    }).then(() => {
+
+        /* ACTIVATING MATCHING
+        cy.clickByDC(LOCATOR.START_MATCHING_BTN)
+        */
+
+        // assert
+        // I assume that the order of entities records does not change after pressing the matching button!!!
+
+        // act
+        cy.getByDC(LOCATOR.STATUS).each((element) => {
+            newStatuses.push(element.text());
+        }).then(() => {
+
+            // assert
+            validateChanges(allStatuses, newStatuses); // currently FAILS -> static page
+
+            // arrange
+            cy.contains(suggestedEntity).click();
+
+            // assert
+            cy.getByDC(LOCATOR.SUGGESTED).then((element) => {
+                const suggestedElementsTest = element.text();
+
+                // assert
+                expect(suggestedElementsTest).to.include(suggestedEntity); // currently FAILS -> static page
+            });
+            cy.getByDC(LOCATOR.CLOSING).then((element) => {
+                const closingElementsTest = element.text();
+
+                // assert
+                expect(closingElementsTest).to.include(closingEntity); // currently FAILS -> static page
+            });
+        });
+
+        // assert
+        cy.verifyVisibilityCheckboxes(); // currently FAILS -> static page
+    });
+});
+
+Cypress.Commands.add("verifyVisibilityCheckboxes", () => {
+    // arrange
+    let visibilityCheckboxes: string[] = [];
+
+    // act
+    cy.getByDC(LOCATOR.VISIBILITY_CHECKBOX).each((element) => {
+        visibilityCheckboxes.push(element.text());
+    }).then(() => {
+
+        // assert
+        expect(visibilityCheckboxes).to.not.include(CHECKBOXES.NOT_CHECKED); // currently FAILS -> static page
+    });
+});
+
+Cypress.Commands.add("verifyEntityFilter", () => {
+    // arrange
+    let allEntities: string[] = [];
+    let filteredEntities: string[] = [];
+
+    cy.getByDC(LOCATOR.ENTITY).each((element) => {
+        allEntities.push(element.text());
+    }).then(() => {
+
+        // act
+        cy.clickByDC(LOCATOR.FILTER_BTN);
+        cy.getByDC(LOCATOR.ENTITY).each((element) => {
+            allEntities.push(element.text());
+        }).then(() => {
+
+            // assert
+            expect(sortAscending(allEntities)).to.eq(filteredEntities); // currently FAILS -> no filtering available
+        });
+    });
 });
