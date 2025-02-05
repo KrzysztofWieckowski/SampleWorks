@@ -1,16 +1,13 @@
 # Testing with Cypress and Typescript 
-![gh1](https://github.com/kamilpalka/recruitmentCyTask/assets/49127696/960414cf-fcd0-439b-9e3e-c07227ee8d02)
-![gh2](https://github.com/kamilpalka/recruitmentCyTask/assets/49127696/60d82859-755d-49ed-a8e7-864e8530f92e)
-
 
 ## Contents.
-This project delivers a test automation examples for web page: https://automationintesting.online/
+This project delivers a test automation examples for 2 static html pages.
 
-It is an example of Cypress framework capabilities, it contains various add-on cypress libraries such as drag-drop, mochawesome-reporter
+It is an example of Cypress framework capabilities, it contains add-on cypress library mochawesome-reporter
 
 it uses various Cypress utility functions like: commands, fixtures, config urls
 
-The project is made in Page Object Model (POM) design pattern
+The project is made partially in Page Object Model (POM) design pattern
 
 ## Requirements.
 1) Download and install Node.js LTS on your operating system
@@ -39,7 +36,5 @@ TypeScript - https://www.typescriptlang.org/
 Node.js - https://nodejs.org/en
 
 Cypress - https://www.cypress.io/
-
-@4tw/cypress-drag-drop - https://www.npmjs.com/package/@4tw/cypress-drag-drop
 
 Mochawesome-reporter - https://www.npmjs.com/package/cypress-mochawesome-reporter

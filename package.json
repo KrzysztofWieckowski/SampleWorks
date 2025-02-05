@@ -13,5 +13,8 @@
     "cypress": "^13.7.1",
     "cypress-mochawesome-reporter": "^3.8.2",
     "typescript": "^5.4.3"
+  },
+  "dependencies": {
+    "git": "^0.1.5"
   }
 }
